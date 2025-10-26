@@ -1,8 +1,8 @@
 import './App.css';
 import LetterGlitch from './components/LetterGlitch';
-import GradientText from './components/GradientText';
-import MagicBento from './components/MagicBento';
-import StarBorder from './components/StarBorder';
+import GradientText from './components/gradienttext';
+import MagicBento from './components/magicbento';
+import StarBorder from './components/starborder';
 import coolkid from './assets/coolkid.png';
 
 function App() {
