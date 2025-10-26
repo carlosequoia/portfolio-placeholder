@@ -4,6 +4,7 @@ import GradientText from './components/gradienttext';
 import MagicBento from './components/magicbento';
 import StarBorder from './components/starborder';
 import coolkid from './assets/coolkid.png';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const handleGitHubClick = () => {
@@ -66,7 +67,7 @@ function App() {
       {/* GradientText with StarBorder - MOVED LOWER */}
       <div style={{
         position: 'absolute',
-        bottom: '20px', // Changed from 40px to 20px to move it lower
+        bottom: '20px',
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',
@@ -76,7 +77,7 @@ function App() {
         <div onClick={handleGitHubClick} style={{ cursor: 'pointer', display: 'inline-block' }}>
           <StarBorder
             as="div"
-            color="#ff9955" // This should now be visible
+            color="#ff9955"
             speed="3s"
             thickness={2}
             style={{ display: 'inline-block' }}
@@ -98,6 +99,9 @@ function App() {
           </StarBorder>
         </div>
       </div>
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
