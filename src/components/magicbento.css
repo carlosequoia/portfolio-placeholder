@@ -1,0 +1,441 @@
+:root {
+  --hue: 27;
+  --sat: 69%;
+  --white: hsl(0, 0%, 100%);
+  --purple-primary: rgba(132, 0, 255, 1);
+  --purple-glow: rgba(132, 0, 255, 0.2);
+  --purple-border: rgba(132, 0, 255, 0.8);
+  --border-color: #392e4e;
+  --background-dark: #060010;
+  color-scheme: light dark;
+}
+
+.card-grid {
+  display: grid;
+  gap: 0.5em;
+  padding: 0.75em;
+  max-width: 54em;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  aspect-ratio: 4/3;
+  min-height: 200px;
+  width: 100%;
+  max-width: 100%;
+  padding: 1.25em;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--background-dark);
+  font-weight: 300;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card__header,
+.card__content {
+  display: flex;
+  position: relative;
+  color: var(--white);
+}
+
+.card__header {
+  gap: 0.75em;
+  justify-content: space-between;
+}
+
+.card__content {
+  flex-direction: column;
+}
+
+.card__label {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card__title,
+.card__description {
+  --clamp-title: 1;
+  --clamp-desc: 2;
+}
+
+.card__title {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0 0 0.25em;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.card__description {
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.2;
+  opacity: 0.9;
+  color: #FFFFFF;
+}
+
+.card--text-autohide .card__title,
+.card--text-autohide .card__description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card--text-autohide .card__title {
+  -webkit-line-clamp: var(--clamp-title);
+  line-clamp: var(--clamp-title);
+}
+
+.card--text-autohide .card__description {
+  -webkit-line-clamp: var(--clamp-desc);
+  line-clamp: var(--clamp-desc);
+}
+
+/* Profile Card Container Styles */
+.profile-card-container {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+.bento-profile-card {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.95);
+}
+
+.bento-profile-card .pc-card {
+  height: 100% !important;
+  max-height: none !important;
+  transform: translate3d(0, 0, 0.1px) rotateX(0deg) rotateY(0deg) !important;
+}
+
+.bento-profile-card .pc-details h3 {
+  font-size: min(3svh, 1.8em) !important;
+}
+
+.bento-profile-card .pc-details p {
+  font-size: 14px !important;
+  top: -8px !important;
+}
+
+.bento-profile-card .pc-user-info {
+  transform: scale(0.9);
+  transform-origin: bottom center;
+}
+
+/* Profile Card Container */
+.profile-card-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  overflow: visible !important;
+}
+
+/* Bento Profile Card Styles */
+.bento-profile-card {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.bento-profile-card .pc-card {
+  height: 100% !important;
+  max-height: none !important;
+  width: 100% !important;
+  background: linear-gradient(145deg, #060010 0%, #1a0a2e 100%) !important;
+  border: 1px solid #392e4e !important;
+  transform: translate3d(0, 0, 0.1px) rotateX(0deg) rotateY(0deg) !important;
+}
+
+/* Remove the colorful background gradients */
+.bento-profile-card .pc-card-wrapper::before {
+  display: none !important;
+}
+
+.bento-profile-card .pc-card {
+  background-image: none !important;
+  background: linear-gradient(145deg, #060010 0%, #1a0a2e 100%) !important;
+}
+
+/* Center the avatar image */
+.bento-profile-card .pc-avatar-content .avatar {
+  width: 50% !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 45% !important;
+  transform: translate(-50%, -50%) !important;
+  opacity: 0.9 !important;
+  max-height: 50% !important;
+  object-fit: contain !important;
+}
+
+/* Adjust text positioning */
+.bento-profile-card .pc-details {
+  top: 15px !important;
+  z-index: 10 !important;
+}
+
+.bento-profile-card .pc-details h3 {
+  font-size: 1.4rem !important;
+  background: linear-gradient(to bottom, #ffffff, #a0a0e0) !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+}
+
+.bento-profile-card .pc-details p {
+  font-size: 0.9rem !important;
+  top: -5px !important;
+  background: linear-gradient(to bottom, #cccccc, #8888cc) !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+}
+
+/* User info styling */
+.bento-profile-card .pc-user-info {
+  bottom: 10px !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transform: scale(0.9) !important;
+  transform-origin: bottom center !important;
+}
+
+.bento-profile-card .pc-handle {
+  color: rgba(255, 255, 255, 0.9) !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+
+.bento-profile-card .pc-status {
+  color: rgba(255, 255, 255, 0.7) !important;
+  -webkit-text-fill-color: initial !important;
+  background: none !important;
+}
+
+/* Remove shine effects */
+.bento-profile-card .pc-shine,
+.bento-profile-card .pc-glare {
+  display: none !important;
+}
+
+/* Ensure it fits in grid layout */
+@media (min-width: 1024px) {
+  .profile-card-container {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  .bento-profile-card .pc-avatar-content .avatar {
+    width: 45% !important;
+    top: 47% !important;
+  }
+}
+
+/* ProfileCard overlay styles */
+.profile-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.profile-card-overlay .bento-profile-card {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.8);
+  opacity: 0.7;
+}
+
+/* Ensure text stays on top */
+.card__header,
+.card__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Make ProfileCard text smaller to fit */
+.bento-profile-card .pc-details h3 {
+  font-size: 1.2rem !important;
+}
+
+.bento-profile-card .pc-details p {
+  font-size: 0.9rem !important;
+}
+
+.bento-profile-card .pc-user-info {
+  transform: scale(0.8);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 599px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0.5em;
+  }
+
+  .card {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .card__title {
+    font-size: 14px;
+  }
+
+  .card__description {
+    font-size: 11px;
+  }
+
+  .card__label {
+    font-size: 11px;
+  }
+
+  .bento-profile-card {
+    transform: scale(0.85);
+  }
+}
+
+@media (min-width: 600px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .card:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+  }
+
+  .card:nth-child(6) {
+    grid-column: 4;
+    grid-row: 3;
+  }
+
+  .profile-card-container {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .bento-profile-card {
+    transform: scale(0.9);
+  }
+}
+
+/* Border glow effect */
+.card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(173, 216, 230, calc(var(--glow-intensity) * 0.8)) 0%,
+    rgba(173, 216, 230, calc(var(--glow-intensity) * 0.4)) 30%,
+    transparent 60%
+  );
+  border-radius: inherit;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: subtract;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card--border-glow:hover::after {
+  opacity: 1;
+}
+
+.card--border-glow:hover {
+  box-shadow:
+    0 4px 20px rgba(46, 24, 78, 0.4),
+    0 0 30px rgba(173, 216, 230, 0.3);
+}
+
+.particle-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(173, 216, 230, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.particle-container:hover {
+  box-shadow:
+    0 4px 20px rgba(46, 24, 78, 0.2),
+    0 0 30px rgba(173, 216, 230, 0.2);
+}
+
+/* Global spotlight styles */
+.global-spotlight {
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
+}
+
+.bento-section {
+  position: relative;
+  user-select: none;
+}

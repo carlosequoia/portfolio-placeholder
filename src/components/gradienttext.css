@@ -1,0 +1,44 @@
+.animated-gradient-text {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-family: 'Poppins', 'Montserrat', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.text-content {
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient linear infinite;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .animated-gradient-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animated-gradient-text {
+    font-size: 1rem;
+  }
+}

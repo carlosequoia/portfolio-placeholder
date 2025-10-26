@@ -1,2 +1,3 @@
 # portfolio-placeholder
-portfolio website kasi bored ako.
+
+Portfolio website kasi bored ako.
