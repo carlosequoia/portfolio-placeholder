@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
-import './MagicBento.css';
-import ProfileCard from './ProfileCard';
+import './magicbento.css';
+import ProfileCard from './profilecard';
 import coolkid from "../assets/coolkid.png";
 
 const DEFAULT_PARTICLE_COUNT = 12;

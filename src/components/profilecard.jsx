@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
-import './ProfileCard.css';
+import './profilecard.css';
 import coolkid from '../assets/coolkid.png';
 
 const DEFAULT_BEHIND_GRADIENT =
